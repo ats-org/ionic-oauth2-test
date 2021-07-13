@@ -1,0 +1,7 @@
+{
+  "name": "ionic-auth-test",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

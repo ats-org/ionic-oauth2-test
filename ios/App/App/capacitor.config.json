@@ -4,11 +4,11 @@
 	"webDir": "www",
 	"bundledWebRuntime": false,
 	"server": {
-		"url": "http://192.168.0.4:8101",
 		"cleartext": true,
 		"allowNavigation": [
-		  "axespointgps.com",
-		  "*.axespointgps.com"
-		]
-	  }
+			"axespointgps.com",
+			"*.axespointgps.com"
+		],
+		"url": "http://192.168.0.4:8101"
+	}
 }

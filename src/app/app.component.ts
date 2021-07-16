@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
-import Amplify from '@aws-amplify/core';
-import { awsConfig } from './models/aws-config';
 import { AuthenticationService } from './services/auth.service';
+import { Oauth2Service } from '@ats-org/oauth2';
+import { App } from '@capacitor/app';
+import { SafariViewController } from '@ionic-native/safari-view-controller';
+import { Platform } from '@ionic/angular';
 
 @Component({
   selector: 'app-root',
@@ -15,20 +17,31 @@ export class AppComponent implements OnInit {
   public window: any;
   constructor(
     private router: Router,
-    private auth: AuthenticationService
+    private oauthService: Oauth2Service,
+    private auth: AuthenticationService,
+    public platform: Platform,
   ) {
     this.window = window;
     // eslint-disable-next-line @typescript-eslint/dot-notation
     this.environment = this.window['__env'] || environment;
-    Amplify.configure(awsConfig);
+    this.platform.ready().then(x => {
+      App.addListener('appUrlOpen', data => {
+        const u = data.url;
+        const a = u.split('/');
+        this.router.navigate([a[1]]);
+        console.log('App opened with URL: ', data);
+        console.log('App opened with URL: ', data.url);
+        console.log('testing the console');
+        SafariViewController.hide();
+      });
+    });
+    this.oauthService.init(this.environment.authConfig);
+    this.oauthService.start();
   }
 
   ngOnInit(): void {
-    this.auth.getCurrentSession().then(data => {
-      console.log('user session', data);
-      if(data === 'No current user') {
-        this.router.navigate(['login']);
-      }
+    this.auth.getUserInfo().subscribe(x => {
+      console.log('user', x);
     });
   }
 

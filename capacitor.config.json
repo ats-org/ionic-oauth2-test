@@ -1,14 +1,6 @@
 {
-	"appId": "io.ionic.starter",
-	"appName": "ionic-auth-test",
+	"appId": "axestrack",
+	"appName": "axestrack",
 	"webDir": "www",
-	"bundledWebRuntime": false,
-	"server": {
-		"url": "http://192.168.0.4:8101",
-		"cleartext": true,
-		"allowNavigation": [
-		  "axespointgps.com",
-		  "*.axespointgps.com"
-		]
-	  }
+	"bundledWebRuntime": false
 }

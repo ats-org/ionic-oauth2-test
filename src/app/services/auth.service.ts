@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { BehaviorSubject } from 'rxjs';
-import { Auth } from '@aws-amplify/auth';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
@@ -28,7 +27,6 @@ export class AuthenticationService {
 
 	public async getCurrentSession() {
         try {
-            await Auth.currentSession();
         } catch (error) {
             return error;
         }

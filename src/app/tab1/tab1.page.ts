@@ -22,7 +22,7 @@ export class Tab1Page {
   }
   getuserDetail(){
     this.auth.getUserInfo().subscribe(x => {
-      alert(JSON.stringify(x))
+      alert(JSON.stringify(x));
     });
   }
 }

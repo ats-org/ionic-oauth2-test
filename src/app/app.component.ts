@@ -17,13 +17,14 @@ import { Platform } from '@ionic/angular';
 export class AppComponent implements OnInit {
   public environment: any;
   public window: any;
+
   constructor(
     private router: Router,
     private oauthService: Oauth2Service,
     private auth: AuthenticationService,
     public platform: Platform,
-    public ngZone:NgZone,
-    public awsService :AwsService
+    public ngZone: NgZone,
+    public awsService: AwsService
   ) {
     this.window = window;
     // eslint-disable-next-line @typescript-eslint/dot-notation
@@ -32,24 +33,24 @@ export class AppComponent implements OnInit {
       App.addListener('appUrlOpen', data => {
         this.ngZone.run(() =>{
           if(data.url.match('axestrack://axestrack.app/aws')){
-            var str = data.url
-            var splitData = str.split('code=')
-            this.awsService.processAuthCode(splitData[1])
+            const str = data.url;
+            const splitData = str.split('code=');
+            this.awsService.processAuthCode(splitData[1]);
           }else{
             const u = data.url;
             const a = u.split('/');
             this.router.navigate([a[1]]);
           }
-        })
+        });
       });
       this.oauthService.init(this.environment.authConfig);
       if(this.platform.is('cordova')){
-        this.awsService.getAuthCode()
+        console.log('init');
+        this.awsService.getAuthCode();
       }else{
         this.oauthService.start();
       }
     });
-
   }
 
   ngOnInit(): void {

@@ -45,12 +45,12 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Capacitor: c8dc98afa620875c27dc4fd253b477115c47fa4c
-  CapacitorApp: 5304b36f52350ceede0d0c3355def71d9516e704
-  CapacitorBrowser: bf33760ca0f39c064ff4be9d0b89fe02b8f5a0df
+  CapacitorApp: 4a7a55cb30ac30af4e4801d4d6e51f4d03aa75e6
+  CapacitorBrowser: 78dca7e45adb2f3c8239c44095aeed7582bf0923
   CapacitorCordova: f0fbb78fae1689a2c849852ed727ada888202428
-  CapacitorHaptics: 9a5091caae4738300d3288cc32f0d34af273f040
-  CapacitorKeyboard: ac97fcb309a69ec4233c3e44bcc19ffb4c707dda
-  CapacitorStatusBar: 3b510c79fbefb2dce24002d8473dca80abbceb44
+  CapacitorHaptics: 2ba8b0f0fd40d5590baa756cd2c91a3d082106f8
+  CapacitorKeyboard: 25f67ec7f6c3ae9a956af8bb6ea0bade18257005
+  CapacitorStatusBar: 5f78c4275b059bf5c0bcf059d9fafc4f1b620d5b
   CordovaPlugins: b6cacb5ae06d9eb864abb53112d55b36b21cb40d
 
 PODFILE CHECKSUM: 7246645d4a783c12abc92a83d6b63abafcdd9bfb

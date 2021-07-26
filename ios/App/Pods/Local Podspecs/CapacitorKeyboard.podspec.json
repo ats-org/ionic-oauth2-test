@@ -4,7 +4,10 @@
   "summary": "The Keyboard API provides keyboard display and visibility control, along with event tracking when the keyboard shows and hides.",
   "license": "MIT",
   "homepage": "git+https://github.com/ionic-team/capacitor-plugins.git",
-  "authors": "Ionic <hi@ionicframework.com>",
+  "authors": {
+    "name": "Ionic",
+    "email": "hi@ionicframework.com"
+  },
   "source": {
     "git": "git+https://github.com/ionic-team/capacitor-plugins.git",
     "tag": "1.0.2"

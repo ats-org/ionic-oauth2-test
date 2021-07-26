@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,NgZone } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
 import { AuthenticationService } from './services/auth.service';
+import { AwsService } from './services/aws.service';
 import { Oauth2Service } from '@ats-org/oauth2';
 import { App } from '@capacitor/app';
 import { SafariViewController } from '@ionic-native/safari-view-controller';
 import { Platform } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-root',
@@ -20,23 +22,34 @@ export class AppComponent implements OnInit {
     private oauthService: Oauth2Service,
     private auth: AuthenticationService,
     public platform: Platform,
+    public ngZone:NgZone,
+    public awsService :AwsService
   ) {
     this.window = window;
     // eslint-disable-next-line @typescript-eslint/dot-notation
     this.environment = this.window['__env'] || environment;
     this.platform.ready().then(x => {
       App.addListener('appUrlOpen', data => {
-        const u = data.url;
-        const a = u.split('/');
-        this.router.navigate([a[1]]);
-        console.log('App opened with URL: ', data);
-        console.log('App opened with URL: ', data.url);
-        console.log('testing the console');
-        SafariViewController.hide();
+        this.ngZone.run(() =>{
+          if(data.url.match('axestrack://axestrack.app/aws')){
+            var str = data.url
+            var splitData = str.split('code=')
+            this.awsService.processAuthCode(splitData[1])
+          }else{
+            const u = data.url;
+            const a = u.split('/');
+            this.router.navigate([a[1]]);
+          }
+        })
       });
+      this.oauthService.init(this.environment.authConfig);
+      if(this.platform.is('cordova')){
+        this.awsService.getAuthCode()
+      }else{
+        this.oauthService.start();
+      }
     });
-    this.oauthService.init(this.environment.authConfig);
-    this.oauthService.start();
+
   }
 
   ngOnInit(): void {

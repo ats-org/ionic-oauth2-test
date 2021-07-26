@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Auth } from '@aws-amplify/auth';
+import { AuthenticationService } from '../services/auth.service';
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -9,7 +10,8 @@ import { Auth } from '@aws-amplify/auth';
 export class Tab1Page {
 
   constructor(
-    private router: Router
+    private router: Router,
+    public auth: AuthenticationService,
   ) {}
 
   public logout() {
@@ -18,5 +20,9 @@ export class Tab1Page {
       this.router.navigate(['login']);
     });
   }
-
+  getuserDetail(){
+    this.auth.getUserInfo().subscribe(x => {
+      alert(JSON.stringify(x))
+    });
+  }
 }

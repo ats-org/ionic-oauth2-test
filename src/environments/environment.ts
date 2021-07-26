@@ -27,7 +27,8 @@ export const environment = {
 		tokenPath: '/oauth2/token',
 		// redirectUri: 'https://track-dev.axespointgps.com/cb',
 		// logoutUri: 'https://track-dev.axespointgps.com/',
-		redirectUri: 'axestrack:\/cb',
+		// redirectUri: 'axestrack:\/cb',
+		redirectUri: 'http://localhost:4200/cb',
 		logoutUri: 'axestrack:\/',
 	},
 	aws: {

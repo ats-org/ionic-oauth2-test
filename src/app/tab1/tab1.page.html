@@ -12,9 +12,10 @@
       <ion-title size="large">Tab 1</ion-title>
     </ion-toolbar>
   </ion-header>
+<ion-grid>
+  <ion-button (click)="logout()" >logout</ion-button>
+  <ion-button (click)="getuserDetail()" >User Detail</ion-button>
+</ion-grid>
 
-  <div>
-    <button (click)="logout()">logout</button>
-  </div>
   <app-explore-container name="Tab 1 page"></app-explore-container>
 </ion-content>

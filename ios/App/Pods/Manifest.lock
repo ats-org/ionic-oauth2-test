@@ -1,0 +1,58 @@
+PODS:
+  - Capacitor (3.1.1):
+    - CapacitorCordova
+  - CapacitorApp (1.0.2):
+    - Capacitor
+  - CapacitorBrowser (1.0.2):
+    - Capacitor
+  - CapacitorCordova (3.1.1)
+  - CapacitorHaptics (1.0.2):
+    - Capacitor
+  - CapacitorKeyboard (1.0.2):
+    - Capacitor
+  - CapacitorStatusBar (1.0.2):
+    - Capacitor
+  - CordovaPlugins (3.1.1):
+    - CapacitorCordova
+
+DEPENDENCIES:
+  - "Capacitor (from `../../node_modules/@capacitor/ios`)"
+  - "CapacitorApp (from `../../node_modules/@capacitor/app`)"
+  - "CapacitorBrowser (from `../../node_modules/@capacitor/browser`)"
+  - "CapacitorCordova (from `../../node_modules/@capacitor/ios`)"
+  - "CapacitorHaptics (from `../../node_modules/@capacitor/haptics`)"
+  - "CapacitorKeyboard (from `../../node_modules/@capacitor/keyboard`)"
+  - "CapacitorStatusBar (from `../../node_modules/@capacitor/status-bar`)"
+  - CordovaPlugins (from `../capacitor-cordova-ios-plugins`)
+
+EXTERNAL SOURCES:
+  Capacitor:
+    :path: "../../node_modules/@capacitor/ios"
+  CapacitorApp:
+    :path: "../../node_modules/@capacitor/app"
+  CapacitorBrowser:
+    :path: "../../node_modules/@capacitor/browser"
+  CapacitorCordova:
+    :path: "../../node_modules/@capacitor/ios"
+  CapacitorHaptics:
+    :path: "../../node_modules/@capacitor/haptics"
+  CapacitorKeyboard:
+    :path: "../../node_modules/@capacitor/keyboard"
+  CapacitorStatusBar:
+    :path: "../../node_modules/@capacitor/status-bar"
+  CordovaPlugins:
+    :path: "../capacitor-cordova-ios-plugins"
+
+SPEC CHECKSUMS:
+  Capacitor: c8dc98afa620875c27dc4fd253b477115c47fa4c
+  CapacitorApp: 5304b36f52350ceede0d0c3355def71d9516e704
+  CapacitorBrowser: bf33760ca0f39c064ff4be9d0b89fe02b8f5a0df
+  CapacitorCordova: f0fbb78fae1689a2c849852ed727ada888202428
+  CapacitorHaptics: 9a5091caae4738300d3288cc32f0d34af273f040
+  CapacitorKeyboard: ac97fcb309a69ec4233c3e44bcc19ffb4c707dda
+  CapacitorStatusBar: 3b510c79fbefb2dce24002d8473dca80abbceb44
+  CordovaPlugins: b6cacb5ae06d9eb864abb53112d55b36b21cb40d
+
+PODFILE CHECKSUM: 7246645d4a783c12abc92a83d6b63abafcdd9bfb
+
+COCOAPODS: 1.10.1

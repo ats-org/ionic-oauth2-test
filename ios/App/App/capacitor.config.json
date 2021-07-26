@@ -1,5 +1,5 @@
 {
-	"appId": "axestrack",
+	"appId": "com.axestrack.app",
 	"appName": "axestrack",
 	"webDir": "www",
 	"bundledWebRuntime": false

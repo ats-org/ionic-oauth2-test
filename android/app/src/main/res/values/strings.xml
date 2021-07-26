@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">axestrack</string>
+    <string name="title_activity_main">axestrack</string>
+    <string name="package_name">com.axestrack.app</string>
+    <string name="custom_url_scheme">com.axestrack.app</string>
+</resources>

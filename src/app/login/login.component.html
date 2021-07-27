@@ -1,13 +1,21 @@
-<div>
-  &nbsp;
-  <h3>Login</h3>
-  <form [formGroup]="loginForm">
-    <label for="username">Username: </label>
-    <input id="username" type="text" formControlName="username">
-    <br>    
-    <label for="password">Password: </label>
-    <input id="password" type="password" formControlName="password">
-    <br>
-    <button (click)="login()">Login</button>
-  </form>
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card>
+    <mat-card-content>
+      <h3>Login</h3>
+      <form [formGroup]="loginForm">
+        <mat-form-field>
+          <mat-label>Username:</mat-label>
+          <!-- <label for="username">Username: </label> -->
+          <input matInput id="username" type="text" formControlName="username" >
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <mat-label>Password: </mat-label>
+          <input matInput id="password" type="password" formControlName="password">
+        </mat-form-field>
+        <br>
+        <button (click)="login()">Login</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
 </div>
